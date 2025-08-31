@@ -221,25 +221,26 @@
 </div>
 <script>
      function toggleForm() {
-    const form = document.getElementById('contact-form');
-    form.style.display = form.style.display === 'none' || form.style.display === '' ? 'block' : 'none';
-  }
-
-  function sendToWhatsApp() {
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const email = document.getElementById('email').value.trim();
-
-    if (!phone || !email) {
-      alert("Please enter both mobile number and email.");
-      return;
+        const form = document.getElementById('contact-form');
+        form.style.display = form.style.display === 'none' || form.style.display === '' ? 'block' : 'none';
     }
 
-    const message = `Hello, I would like to get in touch srini{name || 'Not Provided'}%0AMobile: ${phone}%0AEmail: ${email}`;
-    const phoneNumber = '919063198410'; // Replace with your WhatsApp number
+    function sendToWhatsApp() {
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
 
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-  }
+        if (!phone || !email) {
+            alert("Please enter both mobile number and email.");
+            return;
+        }
+
+        // Corrected message construction
+        const message = `Hello, I would like to get in touch with srini.%0AName: ${name || 'Not Provided'}%0AMobile: ${phone}%0AEmail: ${email}`;
+        const phoneNumber = '919063198410'; // Replace with your WhatsApp number
+
+        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    }
 
   // Close form when clicking outside
   document.addEventListener('click', function(event) {
@@ -298,7 +299,6 @@
     overflow: hidden;
     background-position: 20% 34%;
     background-size: 100%;
-    margin-top: 50px;
 }
 
 @media (max-width: 768px) {
@@ -307,6 +307,7 @@
         background-size: cover; /* Ensure the image covers the entire section */
         padding-top: 0; /* Remove padding at the top */
         padding-bottom: 0; /* Remove padding at the bottom */
+
     }
 
     .hero-content{
