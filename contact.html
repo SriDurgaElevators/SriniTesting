@@ -224,26 +224,27 @@
         <button onclick="sendToWhatsApp()">Send via WhatsApp</button>
     </div>
     <script>
-        function toggleForm() {
-            const form = document.getElementById('contact-form');
-            form.style.display = form.style.display === 'none' || form.style.display === '' ? 'block' : 'none';
+    function toggleForm() {
+        const form = document.getElementById('contact-form');
+        form.style.display = form.style.display === 'none' || form.style.display === '' ? 'block' : 'none';
+    }
+
+    function sendToWhatsApp() {
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+
+        if (!phone || !email) {
+            alert("Please enter both mobile number and email.");
+            return;
         }
 
-        function sendToWhatsApp() {
-            const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const email = document.getElementById('email').value.trim();
+        // Corrected message construction
+        const message = `Hello, I would like to get in touch with srini.%0AName: ${name || 'Not Provided'}%0AMobile: ${phone}%0AEmail: ${email}`;
+        const phoneNumber = '919063198410';
 
-            if (!phone || !email) {
-                alert("Please enter both mobile number and email.");
-                return;
-            }
-
-            const message = `Hello, I would like to get in touch srini{name || 'Not Provided'}%0AMobile: ${phone}%0AEmail: ${email}`;
-            const phoneNumber = '919063198410'; // Replace with your WhatsApp number
-
-            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-        }
+        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    }
 
         // Close form when clicking outside
         document.addEventListener('click', function (event) {
@@ -384,6 +385,25 @@
                 opacity: 3;
             }
         }
+
+
+       .email-contact {
+            display: flex;                  /* Flexbox layout to align items in a row */
+            align-items: center;            /* Vertically center the items */
+            white-space: nowrap;            /* Prevent text wrapping */
+            gap: 5px;                       /* Add some space between elements */
+        }
+
+        .email-contact i {
+            margin-right: 5px;              /* Space between the icon and the email text */
+        }
+
+        .email-contact strong {
+            margin-right: 5px;              /* Space between the label and the email */
+        }
+
+
+
     </style>
 
 
@@ -401,12 +421,12 @@
                         <p><i class="fa fa-phone" aria-hidden="true" style="color: #4267B2;"></i>
                             <strong>Phone:</strong> +91 9063198410
                         </p>
-                        <!-- <p><i class="fa fa-mobile" aria-hidden="true" style="color: #4267B2;"></i>
-                            <strong>Mobile:</strong> +91 95533 88999
-                        </p> -->
-                        <p><i class="fa fa-envelope" aria-hidden="true" style="color: #EA4335;"></i>
-                            <strong>Email:</strong> contactsriniprojects@gmail.com
-                        </p>
+                       <p class="email-contact">
+                        <i class="fa fa-envelope" aria-hidden="true" style="color: #EA4335;"></i>
+                        <strong>Email:</strong> <span class="email-address">contactsriniprojects@gmail.com</span>
+                       </p>
+
+
                     </div>
                 </div>
 
@@ -652,6 +672,10 @@
 
 
         /* Main Content */
+        .email-contact .email-address {
+            font-size: 0.85rem;             /* Decrease the font size of the email address */
+         
+        }
         .contact-content {
             display: flex;
             flex-wrap: wrap;
