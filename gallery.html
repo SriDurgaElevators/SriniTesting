@@ -174,27 +174,27 @@ links.forEach(link => {
     </div>
 
     <script>
-          
          function toggleForm() {
         const form = document.getElementById('contact-form');
         form.style.display = form.style.display === 'none' || form.style.display === '' ? 'block' : 'none';
-      }
-  
-      function sendToWhatsApp() {
+    }
+
+    function sendToWhatsApp() {
         const name = document.getElementById('name').value.trim();
         const phone = document.getElementById('phone').value.trim();
         const email = document.getElementById('email').value.trim();
-  
+
         if (!phone || !email) {
-          alert("Please enter both mobile number and email.");
-          return;
+            alert("Please enter both mobile number and email.");
+            return;
         }
-  
-        const message = `Hello, I would like to get in touch srini{name || 'Not Provided'}%0AMobile: ${phone}%0AEmail: ${email}`;
+
+        // Corrected message construction
+        const message = `Hello, I would like to get in touch with srini.%0AName: ${name || 'Not Provided'}%0AMobile: ${phone}%0AEmail: ${email}`;
         const phoneNumber = '919063198410'; // Replace with your WhatsApp number
-  
+
         window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-      }
+    }
   
       // Close form when clicking outside
       document.addEventListener('click', function(event) {
@@ -649,12 +649,13 @@ links.forEach(link => {
         /* Hero Section */
         .hero-section {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
-                url(gallery-cover-img/gallery-background-img.jpeg) center center/cover no-repeat;
+                url(gallery-cover-img/gallery-background-img.jpeg) center 20%/cover no-repeat;
     color: #f0f0f0;
     padding: 80px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
+    
 }
 
 /* Smoke Layer Base */
@@ -1150,7 +1151,7 @@ links.forEach(link => {
             }
             
             .hero-section {
-                padding: 70px 0;
+                padding: 150px 0;
             }
             
             .hero-content h1 {
@@ -1175,7 +1176,7 @@ links.forEach(link => {
             }
             
             .hero-section {
-                padding: 80px 0;
+                padding: 150px 0;
             }
             
             .hero-content h1 {
