@@ -59,15 +59,15 @@ header {
 
 
 .logo img {
-  width: 380px;
+  width: 285px;
   /* Adjust for desktop */
-  height: 100px;
+  height: 120px;
   padding-top: 10PX;
   padding-left: 40px;
 }
 
 header {
-    position: fixed;
+    position: sticky;
     padding-right: 30px;
     top: 0;
     width: 100%;
@@ -80,23 +80,24 @@ header {
 
 /* Mobile styling */
 @media (max-width: 830px) {
+  header {
+    justify-content: center;   /* center all contents inside header */
+    padding: 10px 20px;        /* reduce padding for mobile */
+  }
+
   .logo {
-    margin-left: 20px;
-  
-    /* Move logo a bit to the left */
+    margin: 0 auto;            /* auto margin centers it */
+    text-align: center;        /* ensure alignment */
   }
 
   .logo img {
-    width: 200px;
-    /* Auto-adjust size for mobile */
-    height: 80px;
-    margin-right: 30px;
-  }
-  header {
-    position: sticky;
-    top: 0.1px;
+    width: 180px;              /* smaller for mobile */
+    height: auto;
+    display: block;
+    margin: 0 auto;            /* image itself centered */
   }
 }
+
 
 nav {
   display: flex;
