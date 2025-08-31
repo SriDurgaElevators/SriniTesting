@@ -227,26 +227,27 @@ links.forEach(link => {
         <button onclick="sendToWhatsApp()">Send via WhatsApp</button>
     </div>
     <script>
-         function toggleForm() {
+        function toggleForm() {
         const form = document.getElementById('contact-form');
         form.style.display = form.style.display === 'none' || form.style.display === '' ? 'block' : 'none';
-      }
-  
-      function sendToWhatsApp() {
+    }
+
+    function sendToWhatsApp() {
         const name = document.getElementById('name').value.trim();
         const phone = document.getElementById('phone').value.trim();
         const email = document.getElementById('email').value.trim();
-  
+
         if (!phone || !email) {
-          alert("Please enter both mobile number and email.");
-          return;
+            alert("Please enter both mobile number and email.");
+            return;
         }
-  
-        const message = `Hello, I would like to get in touch srini{name || 'Not Provided'}%0AMobile: ${phone}%0AEmail: ${email}`;
+
+        // Corrected message construction
+        const message = `Hello, I would like to get in touch with srini.%0AName: ${name || 'Not Provided'}%0AMobile: ${phone}%0AEmail: ${email}`;
         const phoneNumber = '919063198410'; // Replace with your WhatsApp number
-  
+
         window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-      }
+    }
   
       // Close form when clicking outside
       document.addEventListener('click', function(event) {
@@ -391,27 +392,27 @@ links.forEach(link => {
 
 
     <!-- img scroller -->
-    <div class="main" style="margin-bottom: 40px;">
+     <div class="main" style="margin: 0 0 50px 0;">
         <div class="image-scroller">
             <div class="scroller-track">
-                <img src="img scroller/scr8.png" alt="img1" />
-                <img src="img scroller/scr7.png" alt="img2" />
-                <img src="img scroller/scr6.png" alt="img3" />
-                <img src="img scroller/scr5.png" alt="img4" />
-                <img src="img scroller/scr4.png" alt="img5" />
-                <img src="img scroller/scr3.png" alt="img6" />
-                <img src="img scroller/scr2.png" alt="img7" />
-                <img src="img scroller/scr1.png" alt="img8" />
+                <img src="img scroller/scr7.png" />
+                <img src="img scroller/scr5.png" />
+                <img src="img scroller/scr3.png"/>
+                <img src="img scroller/scr2.png"/>
+                <img src="img scroller/sc9.png"/>
+                <img src="img scroller/sc10.png"/>
+                <img src="img scroller/sc11.png"/>
+
 
                 <!-- Repeat for infinite loop effect -->
-                <img src="img scroller/scr8.png" alt="img1" />
-                <img src="img scroller/scr7.png" alt="img2" />
-                <img src="img scroller/scr6.png" alt="img3" />
-                <img src="img scroller/scr5.png" alt="img4" />
-                <img src="img scroller/scr4.png" alt="img5" />
-                <img src="img scroller/scr3.png" alt="img6" />
-                <img src="img scroller/scr2.png" alt="img7" />
-                <img src="img scroller/scr1.png" alt="img8" />
+                <img src="img scroller/scr7.png"/>
+                <img src="img scroller/scr5.png"/>
+                <img src="img scroller/scr3.png"/>
+                <img src="img scroller/scr2.png"/>
+                <img src="img scroller/sc9.png"/>
+                <img src="img scroller/sc10.png"/>
+                <img src="img scroller/sc11.png"/>
+
             </div>
         </div>
     </div>
