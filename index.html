@@ -1538,7 +1538,7 @@
              
             }
             .mainimage {
-               background-image: url('SlidingImages/MainImage-mobile.jpg');
+               background-image: url('SlidingImages/MainImage-mobile.jpg') !important;
                        }
         }
 
@@ -1556,6 +1556,12 @@
                 height: 8px;
             }
         }
+
+        @media (max-width: 360px) {
+        .mainimage {
+               background-image: url('SlidingImages/MainImage-mobile.jpg') !important;
+                       }
+            }
     </style>
 
     <div class="slider-container">
@@ -4448,6 +4454,7 @@
 </body>
 
 </html>
+
 
 
 
